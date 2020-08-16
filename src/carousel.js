@@ -17,37 +17,29 @@ export default class Carousel extends React.Component {
     this.handleClickUp = this.handleClickUp.bind(this);
   }
 
-  handleClickDown() {
+  handleClickDown = () => {
     let index = this.state.current;
-    let length = this.state.items.length;
-    if ((index = 0)) {
-      index = length;
-    } else {
-      index = index - 1;
-    }
+    index = this.state.current -= 1;
 
     this.setState = {
       current: index
     };
-  }
+  };
 
-  handleClickUp() {
+  handleClickUp = () => {
     let index = this.state.current;
-    let length = this.state.items.length;
-    if (index < length) {
-      index = index + 1;
-    } else {
-      index = length;
-    }
+
+    index = this.state.current += 1;
 
     this.setState = {
       current: index
     };
-  }
+  };
 
   render() {
-    let index = this.state.current;
-    let src = this.state.items[index];
+    let index = this.state.current,
+      src = this.state.items[index];
+
     return (
       <div className="container">
         <img src={src} alt="" />

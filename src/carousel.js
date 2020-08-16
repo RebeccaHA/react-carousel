@@ -23,7 +23,7 @@ export default class Carousel extends React.Component {
   dotMove = index => {
     const dots = document.getElementsByClassName("dot");
     for (let i = 0; i < dots.length; i++) {
-      if (dots[i].id === `${index}`) {
+      if (dots[i].dataset.id === `${index}`) {
         console.log(dots[i]);
         dots[i].style.backgroundColor = "blue";
       } else {
@@ -80,12 +80,12 @@ export default class Carousel extends React.Component {
           </button>
 
           <div className="dot-container">
-            <div className="dot" id="0"></div>
-            <div className="dot" id="1"></div>
-            <div className="dot" id="2"></div>
-            <div className="dot" id="3"></div>
-            <div className="dot" id="4"></div>
-            <div className="dot" id="5"></div>
+            <div className="dot" data-id="0" id="one"></div>
+            <div className="dot" data-id="1"></div>
+            <div className="dot" data-id="2"></div>
+            <div className="dot" data-id="3"></div>
+            <div className="dot" data-id="4"></div>
+            <div className="dot" data-id="5"></div>
           </div>
         </div>
       </div>

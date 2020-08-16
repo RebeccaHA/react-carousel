@@ -20,6 +20,18 @@ export default class Carousel extends React.Component {
     this.handleClickUp = this.handleClickUp.bind(this);
   }
 
+  dotMove = index => {
+    const dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < dots.length; i++) {
+      if (dots[i].id === `${index}`) {
+        console.log(dots[i]);
+        dots[i].style.backgroundColor = "blue";
+      } else {
+        dots[i].style.backgroundColor = "black";
+      }
+    }
+  };
+
   handleClickDown = () => {
     let index = this.state.current;
     let length = this.state.items.length;
@@ -30,23 +42,12 @@ export default class Carousel extends React.Component {
     }
 
     this.setState({ current: index });
+    this.dotMove(index);
     // this.setState(previousState => {
     //   return {
     //     current: previousState.current - 1
     //   };
     // });
-  };
-
-  dotUp = index => {
-    const dots = document.getElementsByClassName("dot");
-    for (let i = 0; i < dots.length; i++) {
-      if (dots[i].id === `${index}`) {
-        console.log(dots[i]);
-        dots[i].style.backgroundColor = "blue";
-      } else {
-        dots[i].style.backgroundColor = "black";
-      }
-    }
   };
 
   handleClickUp = () => {
@@ -59,7 +60,7 @@ export default class Carousel extends React.Component {
       index = index + 1;
     }
     this.setState({ current: index });
-    this.dotUp(index);
+    this.dotMove(index);
   };
 
   render() {

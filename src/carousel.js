@@ -10,7 +10,10 @@ export default class Carousel extends React.Component {
       items: [
         "/images/image_1.jpg",
         "/images/image_2.jpg",
-        "/images/image_3.jpg"
+        "/images/image_3.jpg",
+        "/images/image_4.jpg",
+        "/images/image_5.jpg",
+        "/images/image_6.jpg"
       ]
     };
     this.handleClickDown = this.handleClickDown.bind(this);
@@ -19,7 +22,12 @@ export default class Carousel extends React.Component {
 
   handleClickDown = () => {
     let index = this.state.current;
-    index = index + 1;
+    let length = this.state.items.length;
+    if (index === 0) {
+      index = length - 1;
+    } else {
+      index = index - 1;
+    }
 
     this.setState({ current: index });
     // this.setState(previousState => {
@@ -30,11 +38,15 @@ export default class Carousel extends React.Component {
   };
 
   handleClickUp = () => {
-    this.setState(previousState => {
-      return {
-        current: previousState.current + 1
-      };
-    });
+    let index = this.state.current;
+    let length = this.state.items.length;
+
+    if (index === length - 1) {
+      index = 0;
+    } else {
+      index = index + 1;
+    }
+    this.setState({ current: index });
   };
 
   render() {

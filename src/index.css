@@ -1,48 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  background-color: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  margin: 0;
+  padding-bottom: 100px;
+}
+#root {
+  display: flex;
 }
 
 .container {
   display: flex;
+  margin: 100px;
 }
 
-.buttons {
+.carousel {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 img {
   height: 300px;
-  width: 50%;
-}
-
-#forward-button {
-  display: flex;
-  align-items: center;
-  height: 50px;
+  width: 100%;
 }
 
 #back-button {
   display: flex;
   align-items: center;
   height: 50px;
+  position: absolute;
+  left: 7px;
+  top: 125px;
+}
+
+#forward-button {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  position: absolute;
+  right: 7px;
+  top: 125px;
 }
 
 .dot-container {
   display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 .dot {
-  background-color: black;
+  background-color: white;
   width: 10px;
   height: 10px;
   border-radius: 50%;

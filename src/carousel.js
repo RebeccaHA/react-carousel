@@ -27,7 +27,7 @@ export default class Carousel extends React.Component {
         console.log(dots[i]);
         dots[i].style.backgroundColor = "blue";
       } else {
-        dots[i].style.backgroundColor = "black";
+        dots[i].style.backgroundColor = "white";
       }
     }
   };
@@ -69,20 +69,24 @@ export default class Carousel extends React.Component {
 
     return (
       <div className="container">
-        <img src={src} alt="" />
-        <button onClick={this.handleClickDown} id="back-button">
-          back
-        </button>
-        <button onClick={this.handleClickUp} id="forward-button">
-          forward
-        </button>
-        <div className="dot-container">
-          <div className="dot" id="0"></div>
-          <div className="dot" id="1"></div>
-          <div className="dot" id="2"></div>
-          <div className="dot" id="3"></div>
-          <div className="dot" id="4"></div>
-          <div className="dot" id="5"></div>
+        <div className="carousel">
+          <img src={src} alt="" />
+
+          <button onClick={this.handleClickUp} id="forward-button">
+            <ArrowForwardIosIcon />
+          </button>
+          <button onClick={this.handleClickDown} id="back-button">
+            <ArrowBackIosIcon />
+          </button>
+
+          <div className="dot-container">
+            <div className="dot" id="0"></div>
+            <div className="dot" id="1"></div>
+            <div className="dot" id="2"></div>
+            <div className="dot" id="3"></div>
+            <div className="dot" id="4"></div>
+            <div className="dot" id="5"></div>
+          </div>
         </div>
       </div>
     );

@@ -36,3 +36,15 @@ img {
   align-items: center;
   height: 50px;
 }
+
+.dot-container {
+  display: flex;
+}
+
+.dot {
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+}

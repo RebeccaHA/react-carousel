@@ -19,21 +19,22 @@ export default class Carousel extends React.Component {
 
   handleClickDown = () => {
     let index = this.state.current;
-    index = this.state.current -= 1;
+    index = index + 1;
 
-    this.setState = {
-      current: index
-    };
+    this.setState({ current: index });
+    // this.setState(previousState => {
+    //   return {
+    //     current: previousState.current - 1
+    //   };
+    // });
   };
 
   handleClickUp = () => {
-    let index = this.state.current;
-
-    index = this.state.current += 1;
-
-    this.setState = {
-      current: index
-    };
+    this.setState(previousState => {
+      return {
+        current: previousState.current + 1
+      };
+    });
   };
 
   render() {
